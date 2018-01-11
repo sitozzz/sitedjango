@@ -1,0 +1,7 @@
+<!--Подключаем стили -->
+{% extends "example/wrapper.html" %}
+{% block content %}
+    <h2 class="text-info">{{articles.title}}</h2>
+    <h6 class="text-info">Опубликовано: {{articles.pub_date|date:"h:m:s/d-m-Y"}}</h6>
+    <p>{{articles.body|safe|linebreaks}}</p>
+{% endblock content %}
