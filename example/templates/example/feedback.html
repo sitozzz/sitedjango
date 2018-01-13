@@ -1,0 +1,30 @@
+{% extends "example/wrapper.html" %}
+
+{% block content %}
+<h2>Форма обратной связи</h2>
+<br>
+<form action="/contact/" method="post">
+{% csrf_token %}
+{{form.non_field_errors}}
+    <div>
+        <label for="id_subject">Тема:</label><br>
+        {{form.subject.errors}}
+        {{form.subject}}
+    </div>
+    <div>
+        <label for="id_sender">Email:</label><br>
+        {{form.sender.errors}}
+        {{form.sender}}
+    </div>
+    <div>
+        <label for="id_message">Сообщение:</label><br>
+        {{form.message.errors}}
+        {{form.message}}
+    </div>
+    <div>
+        {{form.copy.errors}}
+        <label for="id_copy">Отправить себе {{form.copy}}</label><br>
+    </div>
+    <input type="submit" value="Отправить"/>
+</form>
+{% endblock content  %}
