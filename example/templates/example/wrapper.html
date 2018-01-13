@@ -10,19 +10,30 @@
     type="text/css">
 </head>
 <body>
-        <div class="jumbotron">
+        <div class="modal-header jumbotron">
+            <div class="container">
+                    <p>
+                        <a href="/" class="btn btn-success btn-lg">&bigstar;На главную</a>
+                        <a href="/about" class="btn btn-primary btn-lg">&quest;О нас</a>
+                        <a href="/contact" class="btn btn-info btn-lg">Связаться с нами &raquo;</a>
+                        {% block auth %}                        
+                        {% endblock auth %}
+                    </p>
+            </div>
+        </div>
+        
             <div class="container">
                 <h1>Приложение на Django</h1>
                 <hr>
                 {% block content %}
                 {% endblock %}
-                <p>
+                {% comment %} <p>
                     <a href="/" class="btn btn-success btn-lg">На главную</a>
                     <a href="/about" class="btn btn-primary btn-lg">О нас&raquo;</a>
                     <a href="/contact" class="btn btn-info btn-lg">Связаться с нами &raquo;</a>
-                </p>
+                </p> {% endcomment %}
             </div>
-        </div>
+        
         <div class="container">
             <hr>
             &copy; Екатеринбург, 2018

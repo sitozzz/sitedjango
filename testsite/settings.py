@@ -26,19 +26,31 @@ SECRET_KEY = '9v@@&1@f_54b55nxq4#3n4l2%)1=mi&qa2m$nm&wb6#-x1=i=l'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#Количество дней хранения кода активации
+ACCOUNT_ACTIVATION_DAYS = 2
+#Отправка кода
+AUTH_USER_EMAIL_UNIQUE = True
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'info@google.ru'
 
 # Application definition
 
 INSTALLED_APPS = [
     'about',
     'example',
+    'registration',    
     'django.contrib.admin',
+    'customuseradmin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 
 ]
 

@@ -1,0 +1,29 @@
+{% extends "example/wrapper.html" %}
+{% block content %}
+    <h1>Регистрация</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <dl class="register">
+            {% for field in form  %}
+                <dt>{{ field.label_tag }}</dt>
+                <dd class="clearfix">
+                    {{field}}
+                    {% if field.help_text  %}
+                        {% comment %} <div class="clearfix">
+                            {{field.help_text}}
+                        </div> {% endcomment %}
+                    {%endif%}
+                    {% if field.errors %}
+                        <div class="clearfix">
+                            {{field.errors}}
+                        </div>
+                    {% endif %}
+                </dd>
+            {% endfor %}
+        </dl>
+        <button class="btn btn-warning btn-md"> Регистрация</button>
+    </form>
+    <br>
+    <hr>
+    
+{% endblock content %}
