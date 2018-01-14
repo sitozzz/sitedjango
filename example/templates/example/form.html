@@ -1,0 +1,12 @@
+{% extends "example/wrapper.html" %}
+
+{% block content %}
+
+    <form action="thnks.html" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn  btn-lg btn-success" type="submit">Отправить &raquo;</button>
+    </form>
+
+
+{% endblock %}
