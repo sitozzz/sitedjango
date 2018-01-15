@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^', include('example.urls')),
     url(r'^feedback/$', localForm),
     url(r'^about/', include('about.urls')),
+    url(r'^', include('product.urls')),
+    url(r'^', include('order.urls')),
 ]
